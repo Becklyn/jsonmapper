@@ -483,11 +483,6 @@ class JsonMapper
                         if ($ptype instanceof ReflectionNamedType) {
                             $typeName = $ptype->getName();
                         }
-                        if ($ptype instanceof ReflectionUnionType
-                            || !$ptype->isBuiltin()
-                        ) {
-                            $typeName = '\\' . $typeName;
-                        }
                         //allow overriding an "array" type hint
                         // with a more specific class in the docblock
                         if ($typeName !== 'array') {
